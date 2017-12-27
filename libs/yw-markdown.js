@@ -1,0 +1,51 @@
+var simplemde = new SimpleMDE({
+    element: document.getElementById('SimpleMDE'),
+    spellChecker: false,
+    autofocus: true,
+    indentWithTabs: false,
+    lineWrapping: true,
+    linenumbers: true,
+    autosave: {
+        enabled: false,
+        uniqueId: 'YesWikiEdit' + $('#SimpleMDE').data('page'),
+        delay: 1000,
+    },
+    parsingConfig: {
+        allowAtxHeaderWithoutSpace: true,
+    },
+    promptURLs: true,
+    toolbar: [
+        "heading",
+        "bold",
+        "italic",
+        "strikethrough",
+        "|",
+        "code",
+        "quote",
+        "unordered-list",
+        "ordered-list",
+        "clean-block",
+        "|",
+        "link",
+        "image",
+        "table",
+        "horizontal-rule",
+        "|",
+        "preview",
+        "side-by-side",
+        "fullscreen",
+        "|",
+        "guide",
+        "|",
+        "undo",
+        "redo",
+        {
+            name: 'custom',
+            action: function customFunction(editor) {
+                alert('youpi');
+            },
+            className: 'fa fa-star',
+            title: 'Custom Button',
+        }
+    ],
+});
